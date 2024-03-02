@@ -29542,7 +29542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19
 		L_4 = CADSerializer_SerializeObject_mAA741EA234BBC7598EF29E427953E12DFC5F2040(L_3, /*hidden argument*/NULL);
 		NullCheck(L_4);
 		ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* L_5;
-		L_5 = VirtFuncInvoker0< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* >::Invoke(30 /* System.Byte[] System.IO.MemoryStream::GetBuffer() */, L_4);
+		L_5 = VirtFuncInvoker0< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* >::Invoke(31 /* System.Byte[] System.IO.MemoryStream::GetBuffer() */, L_4);
 		return L_5;
 	}
 }
@@ -29611,7 +29611,7 @@ IL_0019:
 		L_15 = CADSerializer_SerializeMessage_m6218568559565378349221BEE13A9121F7837746(L_14, /*hidden argument*/NULL);
 		NullCheck(L_15);
 		ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* L_16;
-		L_16 = VirtFuncInvoker0< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* >::Invoke(30 /* System.Byte[] System.IO.MemoryStream::GetBuffer() */, L_15);
+		L_16 = VirtFuncInvoker0< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* >::Invoke(31 /* System.Byte[] System.IO.MemoryStream::GetBuffer() */, L_15);
 		*((RuntimeObject **)L_13) = (RuntimeObject *)L_16;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject **)L_13, (void*)(RuntimeObject *)L_16);
 		return;
@@ -30509,6 +30509,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m2D82228EC0D3140
 		String_t* L_0 = ___message0;
 		Exception_t * L_1 = ___innerException1;
 		SystemException__ctor_m14A39C396B94BEE4EFEA201FB748572011855A94(__this, L_0, L_1, /*hidden argument*/NULL);
+		Exception_SetErrorCode_m92A787DA80F9CBC81E05D158F3D8099A8F1DD44D(__this, ((int32_t)-2147024809), /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void System.ArgumentException::.ctor(System.String,System.String,System.Exception)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m4A8FC5B8C861B832E1515F870BEC4B7305E69E80 (ArgumentException_t505FA8C11E883F2D96C797AD9D396490794DEE00 * __this, String_t* ___message0, String_t* ___paramName1, Exception_t * ___innerException2, const RuntimeMethod* method)
+{
+	{
+		String_t* L_0 = ___message0;
+		Exception_t * L_1 = ___innerException2;
+		SystemException__ctor_m14A39C396B94BEE4EFEA201FB748572011855A94(__this, L_0, L_1, /*hidden argument*/NULL);
+		String_t* L_2 = ___paramName1;
+		__this->set_m_paramName_17(L_2);
 		Exception_SetErrorCode_m92A787DA80F9CBC81E05D158F3D8099A8F1DD44D(__this, ((int32_t)-2147024809), /*hidden argument*/NULL);
 		return;
 	}
