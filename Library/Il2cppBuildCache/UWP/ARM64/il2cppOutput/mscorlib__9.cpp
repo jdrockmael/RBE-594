@@ -36425,7 +36425,7 @@ IL_005a:
 		int32_t L_13 = ___ibStart1;
 		int32_t L_14 = ___cbSize2;
 		NullCheck(L_11);
-		VirtActionInvoker3< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726*, int32_t, int32_t >::Invoke(28 /* System.Void System.IO.Stream::Write(System.Byte[],System.Int32,System.Int32) */, L_11, L_12, L_13, L_14);
+		VirtActionInvoker3< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726*, int32_t, int32_t >::Invoke(29 /* System.Void System.IO.Stream::Write(System.Byte[],System.Int32,System.Int32) */, L_11, L_12, L_13, L_14);
 		return;
 	}
 }
@@ -43123,7 +43123,7 @@ IL_0062:
 		int64_t L_35 = V_6;
 		NullCheck(L_34);
 		int64_t L_36;
-		L_36 = VirtFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(24 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_34, L_35, 0);
+		L_36 = VirtFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(25 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_34, L_35, 0);
 		goto IL_00cc;
 	}
 
