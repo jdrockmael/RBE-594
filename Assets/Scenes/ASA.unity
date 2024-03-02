@@ -4725,7 +4725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899067323674422606, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1469088713916240012, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4957,7 +4957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5163283639146115739, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5163283639146115739, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: m_Positions.Array.data[0].x
@@ -4985,7 +4985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5163283640331788145, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5163283640331788145, guid: 2178a4f39c6d7cd449ded5136411490c, type: 3}
       propertyPath: m_Positions.Array.data[0].x
@@ -5914,10 +5914,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 411790996}
     m_Modifications:
+    - target: {fileID: 50884439112636976, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 97712867682818967, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1442556459}
+    - target: {fileID: 725459722818829184, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1535362961322282719, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: TouchEnd.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -5986,6 +5994,10 @@ PrefabInstance:
       propertyPath: TouchBegin.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1685470803686106819, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2160703845858219457, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: maxDistance
       value: 0.7
@@ -6000,7 +6012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5175006676498987762, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.1954
       objectReference: {fileID: 0}
     - target: {fileID: 5175006676498987762, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6054,6 +6066,10 @@ PrefabInstance:
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7356680399230870714, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7491684850712405277, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6077,6 +6093,10 @@ PrefabInstance:
     - target: {fileID: 8451903938721560943, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_Name
       value: AnchorMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451903938721560943, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
