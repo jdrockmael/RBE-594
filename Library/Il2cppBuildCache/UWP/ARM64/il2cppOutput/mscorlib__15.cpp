@@ -444,6 +444,8 @@ struct SafeFileHandle_tC77A9860A03C31DC46AD2C08EC10EACDC3B7A662;
 struct SafeFindHandle_t0E0D5349FC3144C1CAB2D20DCD3023B25833B8BD;
 // System.Runtime.InteropServices.SafeHandle
 struct SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B;
+// Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid
+struct SafeHandleMinusOneIsInvalid_t542F86CD15E22E871D725A162DF6EE305850ABC6;
 // Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 struct SafeHandleZeroOrMinusOneIsInvalid_t0C690C7DC958D0C04E529E2BB0F6569956328B45;
 // Microsoft.Win32.SafeHandles.SafeRegistryHandle
@@ -7571,6 +7573,15 @@ public:
 };
 
 
+// Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid
+struct SafeHandleMinusOneIsInvalid_t542F86CD15E22E871D725A162DF6EE305850ABC6  : public SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B
+{
+public:
+
+public:
+};
+
+
 // Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 struct SafeHandleZeroOrMinusOneIsInvalid_t0C690C7DC958D0C04E529E2BB0F6569956328B45  : public SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B
 {
@@ -11773,6 +11784,12 @@ public:
 // System.Runtime.CompilerServices.RuntimeWrappedException
 
 
+// Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid
+
+
+// Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid
+
+
 // Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 
 
@@ -14193,12 +14210,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SafeHandle_InternalFinalize_m450E945EAC2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Interlocked_CompareExchange_m7EBFB07A7B97F6413261B302A509C280E5E11400 (int32_t* ___location10, int32_t ___value1, int32_t ___comparand2, const RuntimeMethod* method);
 // System.Void System.Runtime.InteropServices.SafeHandle::DangerousReleaseInternal(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SafeHandle_DangerousReleaseInternal_m3BA2756878D9509B0CD1DC6D55BAFEBC0BC5098B (SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B * __this, bool ___dispose0, const RuntimeMethod* method);
+// System.Void System.IntPtr::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IntPtr__ctor_m45FB8E0F6CB286B157BBBE5CF5B586E9E66F1097 (intptr_t* __this, int32_t ___value0, const RuntimeMethod* method);
 // System.Void System.Runtime.InteropServices.SafeHandle::.ctor(System.IntPtr,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SafeHandle__ctor_m30896EE9F6765AB918312A413BFA0349482C681C (SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B * __this, intptr_t ___invalidHandleValue0, bool ___ownsHandle1, const RuntimeMethod* method);
 // System.Boolean System.IntPtr::IsNull()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool IntPtr_IsNull_m4F73FDEC9D6C90AE4CFEE3A10EBFA887E361A983 (intptr_t* __this, const RuntimeMethod* method);
-// System.Void System.IntPtr::.ctor(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IntPtr__ctor_m45FB8E0F6CB286B157BBBE5CF5B586E9E66F1097 (intptr_t* __this, int32_t ___value0, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.List`1<System.Object>::.ctor()
 inline void List_1__ctor_m0F0E00088CF56FEACC9E32D8B7D91B93D91DAA3B (List_1_t3F94120C77410A62EAE48421CF166B83AB95A2F5 * __this, const RuntimeMethod* method)
 {
@@ -33405,6 +33422,39 @@ IL_00aa:
 IL_00ab:
 	{
 		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid::.ctor(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SafeHandleMinusOneIsInvalid__ctor_mB312D95D8A092B2E9D4940E8AD1D55360A6A0FFA (SafeHandleMinusOneIsInvalid_t542F86CD15E22E871D725A162DF6EE305850ABC6 * __this, bool ___ownsHandle0, const RuntimeMethod* method)
+{
+	{
+		intptr_t L_0;
+		memset((&L_0), 0, sizeof(L_0));
+		IntPtr__ctor_m45FB8E0F6CB286B157BBBE5CF5B586E9E66F1097((&L_0), (-1), /*hidden argument*/NULL);
+		bool L_1 = ___ownsHandle0;
+		SafeHandle__ctor_m30896EE9F6765AB918312A413BFA0349482C681C(__this, (intptr_t)L_0, L_1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Boolean Microsoft.Win32.SafeHandles.SafeHandleMinusOneIsInvalid::get_IsInvalid()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SafeHandleMinusOneIsInvalid_get_IsInvalid_mF59E4507CF6F8BD8F0A09C520CEC0E16EBDD2402 (SafeHandleMinusOneIsInvalid_t542F86CD15E22E871D725A162DF6EE305850ABC6 * __this, const RuntimeMethod* method)
+{
+	{
+		intptr_t L_0 = ((SafeHandle_tC07DCA2CABF6988953342757EFB1547363E5A36B *)__this)->get_handle_0();
+		intptr_t L_1;
+		memset((&L_1), 0, sizeof(L_1));
+		IntPtr__ctor_m45FB8E0F6CB286B157BBBE5CF5B586E9E66F1097((&L_1), (-1), /*hidden argument*/NULL);
+		bool L_2;
+		L_2 = IntPtr_op_Equality_m30958D875BACA94F48B6FF6D17B4CF5C36DACD48((intptr_t)L_0, (intptr_t)L_1, /*hidden argument*/NULL);
+		return L_2;
 	}
 }
 #ifdef __clang__
