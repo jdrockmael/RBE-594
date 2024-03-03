@@ -6006,6 +6006,10 @@ PrefabInstance:
       propertyPath: minDistance
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3800775306741643184, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0011
+      objectReference: {fileID: 0}
     - target: {fileID: 5175006676498987762, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_RootOrder
       value: 2
