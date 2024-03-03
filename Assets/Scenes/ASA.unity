@@ -1520,7 +1520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4650336335412807400, guid: 4c4e5efdd39338b46abcf47d87d5532c, type: 3}
       propertyPath: m_text
-      value: Manual control robot
+      value: Manual control Bot
       objectReference: {fileID: 0}
     - target: {fileID: 4650336335412807400, guid: 4c4e5efdd39338b46abcf47d87d5532c, type: 3}
       propertyPath: m_fontSize
