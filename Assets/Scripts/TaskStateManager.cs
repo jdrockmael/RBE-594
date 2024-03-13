@@ -16,6 +16,7 @@ public class TaskStateManager : MonoBehaviour
     [SerializeField] private bool moveArm = false, settingTarget = false;
     public bool isTracking = false, setTarget = false, calibratingAnchor = false;
     [SerializeField] private Interactable toggleSwitchArm;
+    [SerializeField] private Interactable toggleAudio;
     private int gripperState = 0; // gripper is open
     private Vector3 vectorToolFrameASA, desiredToolFrameASA, vectorToolFrameWorld, toolFramePositionInitial;
 
@@ -152,6 +153,18 @@ public class TaskStateManager : MonoBehaviour
 
             toolFrameRenderer.enabled = false;
             isTracking = false;
+        }
+    }
+
+     public void ToggleAudio()
+    {
+        if(toggleAudio.IsToggled){
+            textToSpeech.StartSpeaking("Audio off");
+            spatialAnchor.SetActive(false);
+        }
+        else{
+            textToSpeech.StartSpeaking("Audio on");
+            spatialAnchor.SetActive(true);
         }
     }
 
