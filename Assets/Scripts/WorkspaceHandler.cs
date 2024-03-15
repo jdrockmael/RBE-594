@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnterWorkSpace : MonoBehaviour
+public class WorkspaceHandler : MonoBehaviour
 {
     private bool inWorkspace = false;
     public MeshRenderer plane;
