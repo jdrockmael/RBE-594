@@ -4136,6 +4136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a080afe9f8bea9459d2131cc09e59b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spatialAnchor: {fileID: 0}
+  toolFrameObject: {fileID: 0}
   plane: {fileID: 1765921451}
 --- !u!65 &1765921455
 BoxCollider:
