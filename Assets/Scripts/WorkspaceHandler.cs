@@ -6,7 +6,7 @@ using Microsoft.MixedReality.Toolkit.Audio;
 
 public class WorkspaceHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject spatialAnchor, toolFrameObject;
+    
     private bool inWorkspace = false;
     public MeshRenderer plane;
     private TextToSpeech textToSpeech;
@@ -14,7 +14,7 @@ public class WorkspaceHandler : MonoBehaviour
     void Start()
     {
         plane = gameObject.GetComponent<MeshRenderer> ();
-        textToSpeech = toolFrameObject.GetComponent<TextToSpeech>();
+        textToSpeech = GetComponent<TextToSpeech>();
     }
 
     // Update is called once per frame
