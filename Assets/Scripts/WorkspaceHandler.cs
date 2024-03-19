@@ -28,12 +28,12 @@ public class WorkspaceHandler : MonoBehaviour
             plane.materials[0].color = Color.blue;
         }
     }
-    private void isTriggerEnter(Collider other){
+    private void OnTriggerEnter(Collider other){
         enterWorkspace();
         
     }
 
-    private void isTriggerExit(Collider other){
+    private void OnTriggerExit(Collider other){
         exitWorkspace();
     }
 
