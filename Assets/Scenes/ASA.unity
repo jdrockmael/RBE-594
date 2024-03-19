@@ -4608,7 +4608,6 @@ GameObject:
   - component: {fileID: 1765921453}
   - component: {fileID: 1765921452}
   - component: {fileID: 1765921451}
-  - component: {fileID: 1765921450}
   - component: {fileID: 1765921455}
   - component: {fileID: 1765921454}
   - component: {fileID: 1765921449}
@@ -4635,20 +4634,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1765921450
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765921448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1765921451
 MeshRenderer:
   m_ObjectHideFlags: 0
