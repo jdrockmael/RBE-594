@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using System.Runtime.InteropServices;
 
 public class ScrollMed : MonoBehaviour
 {
@@ -42,18 +43,36 @@ public class ScrollMed : MonoBehaviour
         
         // Number of medicines in list
         int rowNum = (data.Length - 1) / 3 - 1;
+        DateTime today = DateTime.Today.Date;
 
-        
         for (int i = 1; i <= rowNum; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
+
+            // Check if medicine is expired
+            DateTime medExp = DateTime.Parse(data[i * 3 + 2]);
+
+            Boolean expire = false;
+            if (today > medExp)
+            {
+                expire = true;
+            }
+
+            // Get ID
             obj = (GameObject)Instantiate(prefab, transform);
             obj.GetComponent<Text>().text = data[i*3];
-            
+            if (expire) obj.GetComponent<Text>().color = Color.red;
+
+            //obj.GetComponent<Text>().color = Color.red;
+            // Get Name
             obj = (GameObject)Instantiate(prefab, transform);
             obj.GetComponent<Text>().text = data[i * 3 + 1];
+            if (expire) obj.GetComponent<Text>().color = Color.red;
+
+            // Get Exp Date
             obj = (GameObject)Instantiate(prefab, transform);
             obj.GetComponent<Text>().text = data[i * 3 + 2];
+            if (expire) obj.GetComponent<Text>().color = Color.red;
         }
        
     }
