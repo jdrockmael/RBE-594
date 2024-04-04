@@ -11,10 +11,11 @@ public class WorkspaceHandler : MonoBehaviour
     public MeshRenderer plane;
     private TextToSpeech textToSpeech;
     // Start is called before the first frame update
+    public Collider OtherCollider01 = null;
     void Start()
     {
         plane = gameObject.GetComponent<MeshRenderer> ();
-        textToSpeech = GetComponent<TextToSpeech>();
+        textToSpeech = gameObject.GetComponent<TextToSpeech>();
     }
 
     // Update is called once per frame
@@ -29,12 +30,16 @@ public class WorkspaceHandler : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other){
-        enterWorkspace();
+        if (other.gameObject.name == OtherCollider01.name)
+        {
+            enterWorkspace(); 	
+        }
+        
         
     }
 
     private void OnTriggerExit(Collider other){
-        exitWorkspace();
+            exitWorkspace();
     }
 
     public void enterWorkspace(){
