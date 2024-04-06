@@ -494,7 +494,7 @@ namespace Pathfinding {
 					var p1 = lastCompletedVectorPath[i];
 					var p2 = lastCompletedVectorPath[i + 1];
                     var thickness = 5;
-                    Handles.DrawBezier(p1, p2, p1, p2, Color.red, null, thickness);
+                    //Handles.DrawBezier(p1, p2, p1, p2, Color.red, null, thickness);
                     //Gizmos.DrawLine(lastCompletedVectorPath[i], lastCompletedVectorPath[i+1]);
 				}
 			}
