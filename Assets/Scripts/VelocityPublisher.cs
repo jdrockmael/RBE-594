@@ -24,7 +24,8 @@ public class VelocityPublisher : MonoBehaviour
     void Start()
     {
         // Initialize the ROS connection and the publisher
-        ROSConnection rosConnection = ROSConnection.GetOrCreateInstance();
+        ROSConnection ros = ROSConnection.GetOrCreateInstance();
+        ros.RegisterPublisher<TwistMsg>("/cmd_vel");
         //twistPub = rosConnection.Advertise<TwistMsg>("/cmd_vel");
     }
 
