@@ -31,7 +31,7 @@ public class VelocityPublisher : MonoBehaviour
 
     void Update()
     {
-        if (!emergencyStop)
+        /*if (!emergencyStop)
         {
             // Regular operation: update and publish velocities
             UpdateAndPublishVelocities();
@@ -39,6 +39,11 @@ public class VelocityPublisher : MonoBehaviour
         else
         {
             // Emergency stop is active: publish zero velocities to halt the robot
+            PublishZeroVelocities();
+        }
+        */
+        if(emergencyStop)
+        {
             PublishZeroVelocities();
         }
     }

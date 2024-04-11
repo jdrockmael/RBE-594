@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ef39650214e706e47897e4b67d4fca86, type: 2}
+  - {fileID: 0}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1 &1207053135771884645
 GameObject:
@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1207053135927611131
 Transform:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterials:
-  - {fileID: 2100000, guid: ef39650214e706e47897e4b67d4fca86, type: 2}
+  - {fileID: 0}
   cacheSharedMaterialsFromRenderer: 0
 --- !u!1 &1207053136090471252
 GameObject:
@@ -1815,7 +1815,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 21433621844796372, guid: f137eba12ee10834cb19632437cfdb2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1868,7 +1868,7 @@ MonoBehaviour:
   m_text: Magnesium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f137eba12ee10834cb19632437cfdb2e, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: 21433621844796372, guid: f137eba12ee10834cb19632437cfdb2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2213,12 +2213,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207053136655294160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73de8f766da67af4bb6678ca4e355131, type: 3}
+  m_Script: {fileID: 11500000, guid: d26ea8fdb4656574a9505ca6316a49a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1207053137768700706}
   redPrefab: {fileID: 1207053135927611128}
-  medList: {fileID: 4900000, guid: a969f70fadf153e4d9adcf12691cd5b0, type: 3}
+  medList: {fileID: 4900000, guid: 5e9844346b7710145b93fed751f9d4a4, type: 3}
 --- !u!1 &1207053136665203107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,7 +4910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1207053137768700717
 Transform:
   m_ObjectHideFlags: 0
@@ -5038,7 +5038,7 @@ MonoBehaviour:
   m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f137eba12ee10834cb19632437cfdb2e, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: 21433621844796372, guid: f137eba12ee10834cb19632437cfdb2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
