@@ -3,6 +3,8 @@ using System.Collections;
 // Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
 // This line should always be present at the top of scripts which use pathfinding
 using Pathfinding;
+//using Unity.Robotics.ROSTCPConnector;
+//using RosMessageTypes.UnityRoboticsDemo;
 
 public class ARastarAI : MonoBehaviour
 {
@@ -88,6 +90,13 @@ public class ARastarAI : MonoBehaviour
         // several of them in the same frame.
         reachedEndOfPath = false;
         // The distance to the next waypoint in the path
+
+        /*
+        foreach(Vector3 pos in path.vectorPath)
+        {
+            Debug.Log(pos.ToString());
+        }*/
+
         float distanceToWaypoint;
         while (true)
         {

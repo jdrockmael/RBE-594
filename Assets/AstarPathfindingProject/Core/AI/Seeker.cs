@@ -189,6 +189,7 @@ namespace Pathfinding
 
         private void Update()
         {
+            /*
             if (lastCompletedVectorPath != null)
             {
 
@@ -207,13 +208,19 @@ namespace Pathfinding
                         cube.transform.position = points[j];
                         cube.GetComponent<Renderer>().material.color = new Color(255, 0, 0); 
                         cube.gameObject.tag = "path";
+                        
                     }
 
-                    Console.WriteLine(points);
+                    
                 }
 
+                /*foreach (Vector3 pos in points)
+                {
+                    Debug.Log(pos.ToString());
+                }
 
-            }
+            }*/
+
         }
 
         private static float[] Factorial = new float[]
@@ -661,7 +668,7 @@ namespace Pathfinding
                     var p1 = lastCompletedVectorPath[i];
                     var p2 = lastCompletedVectorPath[i + 1];
                     var thickness = 7;
-                    //Handles.DrawBezier(p1, p2, p1, p2, Color.red, null, thickness);
+                    Handles.DrawBezier(p1, p2, p1, p2, Color.red, null, thickness);
                 }
             }
         }
