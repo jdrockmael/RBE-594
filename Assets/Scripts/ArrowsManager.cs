@@ -9,7 +9,7 @@ using Microsoft.MixedReality.Toolkit.Audio;
 
 public class ArrowsManager : MonoBehaviour
 {
-    private int buttonPressed = 0;
+    private Twist buttonPressed = 0;
     public ROSPublisher publisher;
     ROSConnection ros;
     [SerializeField] private Interactable toggleSwitchBase;
@@ -20,13 +20,13 @@ public class ArrowsManager : MonoBehaviour
     {
         // start the ROS connection
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<Int32Msg>("button_pressed");
+        ros.RegisterPublisher<Twist>("/base_controller/command");
         textToSpeech = gameObject.GetComponent<TextToSpeech>();
     }
 
     void Update()
     {
-        publisher.Int32Message("button_pressed", buttonPressed);
+        publisher.TwistMessage("/base_controller/command", buttonPressed);
     }
 
     public void AppearArrowsBaseControl(){
@@ -52,29 +52,37 @@ public class ArrowsManager : MonoBehaviour
     public void upPressed()
     {
         // Send 1 if up button is pressed
-        buttonPressed = 1;
+        Vector3 pos = Vector3.Set(1.0f, 0.0f, 0.0f);
+        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.0f);
+        buttonPressed = (pos, rot);
     }
 
     public void Released()
     {
-        buttonPressed = 0;
+        buttonPressed = (Vector3.Set(0.0f, 0.0f, 0.0f), Vector3.Set(0.0f, 0.0f, 0.0f));
     }
 
     public void downPressed()
     {
         // Send 2 if down button is pressed
-        buttonPressed = 2;
+        Vector3 pos = Vector3.Set(-1.0f, 0.0f, 0.0f);
+        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.0f);
+        buttonPressed = (pos, rot);
     }
 
     public void rightPressed()
     {
         // Send 3 if right button is pressed
-        buttonPressed = 3;
+        Vector3 pos = Vector3.Set(0.0f, 0.0f, 0.0f);
+        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.1f);
+        buttonPressed = (pos, rot);
     }
 
     public void leftPressed()
     {
         // Send 4 if left button is pressed
-        buttonPressed = 4;
+        Vector3 pos = Vector3.Set(0.0f, 0.0f, 0.0f);
+        Vector3 rot = Vector3.Set(0.0f, 0.0f, -0.1f);
+        buttonPressed = (pos, rot);
     }
 }
