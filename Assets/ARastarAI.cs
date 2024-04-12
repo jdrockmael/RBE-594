@@ -3,8 +3,12 @@ using System.Collections;
 // Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
 // This line should always be present at the top of scripts which use pathfinding
 using Pathfinding;
-//using Unity.Robotics.ROSTCPConnector;
-//using RosMessageTypes.UnityRoboticsDemo;
+using Unity.Robotics.ROSTCPConnector;
+using RosMessageTypes.UnityRoboticsDemo;
+using RosMessageTypes.Std;
+using RosMessageTypes.Geometry;
+using static UnityEditor.PlayerSettings;
+using System;
 
 public class ARastarAI : MonoBehaviour
 {
@@ -26,12 +30,24 @@ public class ARastarAI : MonoBehaviour
 
     public bool reachedEndOfPath;
 
+    ROSConnection ros;
+    private string topicName = "/fuck";
+    public float publishMessageFrequency = 0.5f;
+
+    private float timeElapsed;
+
     public void Start()
     {
         // Get a reference to the Seeker component we added earlier
+        ros = ROSConnection.GetOrCreateInstance();
+        ros.RegisterPublisher<Float32MultiArrayMsg>(topicName);
+        ros.RegisterPublisher<TwistMsg>("/fuckTwist");
+
         seeker = GetComponent<Seeker>();
 
         controller = GetComponent<CharacterController>();
+
+        
 
         // Start to calculate a new path to the targetPosition object, return the result to the OnPathComplete method.
         // Path requests are asynchronous, so when the OnPathComplete method is called depends on how long it
@@ -55,6 +71,31 @@ public class ARastarAI : MonoBehaviour
             path = p;
             // Reset the waypoint counter so that we start to move towards the first point in the path
             currentWaypoint = 0;
+
+            timeElapsed += Time.deltaTime;
+
+            if (timeElapsed > publishMessageFrequency)
+            {
+                int pathLength = path.vectorPath.Count;
+                float[] pathMulti = new float[pathLength + 1];
+                // Finally send the message to server_endpoint.py running in ROS
+
+                for (int i = 0; i < pathLength; i++)
+                {
+                    pathMulti[i] = path.vectorPath[i].x;
+                    //pathMulti[i + 1] = path.vectorPath[i].y;
+                    pathMulti[i + 1] = path.vectorPath[i].z;
+                }
+
+                Float32MultiArrayMsg floatMsg = new Float32MultiArrayMsg { data = pathMulti };
+
+                ros.Publish(topicName, floatMsg);
+                timeElapsed = 0;
+
+                TwistMsg twistMsg = new TwistMsg();
+                twistMsg.linear.x = 1.0;
+                ros.Publish("/fuckTwist", twistMsg);
+            }
         }
         else
         {
@@ -64,6 +105,11 @@ public class ARastarAI : MonoBehaviour
 
     public void Update()
     {
+
+
+        //float[,] fucku2 = { { 1f, 2f, 3f }, { 4f, 5f, 6f } };
+
+
         //GameObject.Find("Ground").GetComponent<Renderer>().enabled = false;
         if (Time.time > lastRepath + repathRate && seeker.IsDone())
         {
@@ -84,6 +130,10 @@ public class ARastarAI : MonoBehaviour
             // We have no path to follow yet, so don't do anything
             return;
         }
+
+        
+        
+
 
         // Check in a loop if we are close enough to the current waypoint to switch to the next one.
         // We do this in a loop because many waypoints might be close to each other and we may reach
@@ -131,9 +181,10 @@ public class ARastarAI : MonoBehaviour
         // Direction to the next waypoint
         // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        //Debug.Log(dir);
         // Multiply the direction by our desired speed to get a velocity
         Vector3 velocity = dir * speed * speedFactor;
-
+        //Debug.Log(velocity);
         // Move the agent using the CharacterController component
         // Note that SimpleMove takes a velocity in meters/second, so we should not multiply by Time.deltaTime
         //controller.SimpleMove(velocity);
