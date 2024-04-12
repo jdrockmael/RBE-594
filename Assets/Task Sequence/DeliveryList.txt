@@ -1,0 +1,10 @@
+Item,Origin,Destination
+VitaminD3,E701, E703
+Albuterol, E701, E715
+Magnesium,E301, E310
+Amoxicillin, E714, E701
+VitaminD3,E702, E708
+Ibuprofen,E501, E505
+Omega-3,E403, E418
+Aspirin,E530, E502
+Aspirin,E405, E430
