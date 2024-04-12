@@ -7,7 +7,7 @@ using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.UnityRoboticsDemo;
 using RosMessageTypes.Std;
 using RosMessageTypes.Geometry;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 using System;
 
 public class ARastarAI : MonoBehaviour

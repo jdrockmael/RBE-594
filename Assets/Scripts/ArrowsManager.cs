@@ -9,24 +9,28 @@ using Microsoft.MixedReality.Toolkit.Audio;
 
 public class ArrowsManager : MonoBehaviour
 {
-    private Twist buttonPressed = 0;
+    private TwistMsg buttonPressed = new TwistMsg();
     public ROSPublisher publisher;
     ROSConnection ros;
     [SerializeField] private Interactable toggleSwitchBase;
     private TextToSpeech textToSpeech;
+
+    private float timeElapsed = 0.0f;
+
+    public float publishMessageFrequency = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         // start the ROS connection
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<Twist>("/base_controller/command");
+        ros.RegisterPublisher<TwistMsg>("/cmd_vel");
         textToSpeech = gameObject.GetComponent<TextToSpeech>();
     }
 
     void Update()
     {
-        publisher.TwistMessage("/base_controller/command", buttonPressed);
+        ros.Publish("/cmd_vel", buttonPressed);
     }
 
     public void AppearArrowsBaseControl(){
@@ -52,37 +56,30 @@ public class ArrowsManager : MonoBehaviour
     public void upPressed()
     {
         // Send 1 if up button is pressed
-        Vector3 pos = Vector3.Set(1.0f, 0.0f, 0.0f);
-        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.0f);
-        buttonPressed = (pos, rot);
+        buttonPressed.linear.x = 0.5;
     }
 
     public void Released()
     {
-        buttonPressed = (Vector3.Set(0.0f, 0.0f, 0.0f), Vector3.Set(0.0f, 0.0f, 0.0f));
+        buttonPressed.linear.x = 0.0;
+        buttonPressed.angular.z = 0.0;
     }
 
     public void downPressed()
     {
         // Send 2 if down button is pressed
-        Vector3 pos = Vector3.Set(-1.0f, 0.0f, 0.0f);
-        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.0f);
-        buttonPressed = (pos, rot);
+        buttonPressed.linear.x = -0.5;
     }
 
     public void rightPressed()
     {
         // Send 3 if right button is pressed
-        Vector3 pos = Vector3.Set(0.0f, 0.0f, 0.0f);
-        Vector3 rot = Vector3.Set(0.0f, 0.0f, 0.1f);
-        buttonPressed = (pos, rot);
+        buttonPressed.angular.z = -1.0;
     }
 
     public void leftPressed()
     {
         // Send 4 if left button is pressed
-        Vector3 pos = Vector3.Set(0.0f, 0.0f, 0.0f);
-        Vector3 rot = Vector3.Set(0.0f, 0.0f, -0.1f);
-        buttonPressed = (pos, rot);
+        buttonPressed.angular.z = 1.0;
     }
 }
