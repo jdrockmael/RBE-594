@@ -2533,7 +2533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &435353566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4083,7 +4083,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1462659820}
         m_TargetAssemblyTypeName: ArrowsManager, Assembly-CSharp
-        m_MethodName: downPressed
+        m_MethodName: upPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
