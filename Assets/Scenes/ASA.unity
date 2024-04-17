@@ -1220,14 +1220,14 @@ PrefabInstance:
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1478393134}
+      objectReference: {fileID: 1478393135}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EStop
+      value: BreakerOff
       objectReference: {fileID: 0}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VelocityPublisher, Assembly-CSharp
+      value: BreakerService, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -5193,7 +5193,15 @@ PrefabInstance:
     - target: {fileID: 97712867682818967, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1442556459}
+      objectReference: {fileID: 1478393135}
+    - target: {fileID: 97712867682818967, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BreakerOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 97712867682818967, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BreakerService, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 725459722198362638, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5409,7 +5417,15 @@ PrefabInstance:
     - target: {fileID: 8079728526892505582, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1024813826}
+      objectReference: {fileID: 1478393135}
+    - target: {fileID: 8079728526892505582, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BreakerOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079728526892505582, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BreakerService, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8451903938721560943, guid: 767340e7992321b4facbd5a9fc5256ae, type: 3}
       propertyPath: m_Name
       value: UIMenu
@@ -8222,6 +8238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478393133}
   - component: {fileID: 1478393134}
+  - component: {fileID: 1478393135}
   m_Layer: 0
   m_Name: VelocityController
   m_TagString: Untagged
@@ -8250,13 +8267,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478393132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae86a026c948d554c82111678f18855f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLinVel: 0.5
-  maxRotVel: 1.0471976
+--- !u!114 &1478393135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478393132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4f5d2670a942c458eb1452d7c501b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1491206657
 GameObject:
   m_ObjectHideFlags: 0
@@ -8924,14 +8951,14 @@ PrefabInstance:
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1478393134}
+      objectReference: {fileID: 1478393135}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
+      value: BreakerOn
       objectReference: {fileID: 0}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VelocityPublisher, Assembly-CSharp
+      value: BreakerService, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7440800412470431853, guid: 45fd0ad89d6d17b4fbe68eb48dbe9de9, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -12490,7 +12517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2692844302685648912
 GameObject:
   m_ObjectHideFlags: 0
