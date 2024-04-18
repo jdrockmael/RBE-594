@@ -80,8 +80,8 @@ public class ARastarAI : MonoBehaviour
             currentWaypoint = 0;
 
             timeElapsed += Time.deltaTime;
-            float prev_y = -6.556f;//-7.068f;
-            float prev_x = -5.888f;//-12.05f;
+            float prev_y = -6.29f;//-7.068f;
+            float prev_x = 5.49f;//-12.05f;
             
             if (timeElapsed > publishMessageFrequency)
             {
