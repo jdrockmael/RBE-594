@@ -31,29 +31,36 @@ public class ARastarAI : MonoBehaviour
     public bool reachedEndOfPath;
 
     ROSConnection ros;
-    private string topicName = "/fuck";
+    private string topicName = "/path";
+    private string topicName2 = "/fuckint";
     public float publishMessageFrequency = 0.5f;
+    public float publishMessageFrequencyDrive = 0.01f;
 
     private float timeElapsed;
+
+    // Velocity update rate
+    private TwistMsg twistMsg = new TwistMsg();
 
     public void Start()
     {
         // Get a reference to the Seeker component we added earlier
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<Float32MultiArrayMsg>(topicName);
-        ros.RegisterPublisher<TwistMsg>("/fuckTwist");
+        ros.RegisterPublisher<Int32Msg>(topicName2);
 
         seeker = GetComponent<Seeker>();
 
         controller = GetComponent<CharacterController>();
 
-        
+        Time.fixedDeltaTime = 0.00005f;
+        twistMsg.linear.x = 0.3;
 
         // Start to calculate a new path to the targetPosition object, return the result to the OnPathComplete method.
         // Path requests are asynchronous, so when the OnPathComplete method is called depends on how long it
         // takes to calculate the path. Usually it is called the next frame.
         //seeker.StartPath(transform.position, targetPosition.position, OnPathComplete);
     }
+
 
     public void OnPathComplete(Path p)
     {
@@ -73,28 +80,34 @@ public class ARastarAI : MonoBehaviour
             currentWaypoint = 0;
 
             timeElapsed += Time.deltaTime;
-
+            float prev_y = -6.556f;//-7.068f;
+            float prev_x = -5.888f;//-12.05f;
+            
             if (timeElapsed > publishMessageFrequency)
             {
                 int pathLength = path.vectorPath.Count;
-                float[] pathMulti = new float[pathLength + 1];
+                float[] pathMulti = new float[pathLength*2 + 1];
                 // Finally send the message to server_endpoint.py running in ROS
 
                 for (int i = 0; i < pathLength; i++)
                 {
-                    pathMulti[i] = path.vectorPath[i].x;
-                    //pathMulti[i + 1] = path.vectorPath[i].y;
-                    pathMulti[i + 1] = path.vectorPath[i].z;
-                }
+                    // Setting x location
+                    pathMulti[i*2] = path.vectorPath[i].z - prev_x;
+                    //Debug.Log(path.vectorPath[i].z);
+                    prev_x = path.vectorPath[i].z;
 
+  
+                    // Setting y location
+                    pathMulti[i*2 + 1] = prev_y - path.vectorPath[i].x;
+                    //Debug.Log(path.vectorPath[i].x);
+                    prev_y = path.vectorPath[i].x;
+                }
+                
                 Float32MultiArrayMsg floatMsg = new Float32MultiArrayMsg { data = pathMulti };
 
                 ros.Publish(topicName, floatMsg);
                 timeElapsed = 0;
 
-                TwistMsg twistMsg = new TwistMsg();
-                twistMsg.linear.x = 1.0;
-                ros.Publish("/fuckTwist", twistMsg);
             }
         }
         else
@@ -105,9 +118,6 @@ public class ARastarAI : MonoBehaviour
 
     public void Update()
     {
-
-
-        //float[,] fucku2 = { { 1f, 2f, 3f }, { 4f, 5f, 6f } };
 
 
         //GameObject.Find("Ground").GetComponent<Renderer>().enabled = false;
@@ -131,7 +141,6 @@ public class ARastarAI : MonoBehaviour
             return;
         }
 
-        
         
 
 
