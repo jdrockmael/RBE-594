@@ -11,7 +11,7 @@ public class generateTerrain : MonoBehaviour
     public static float kNormalizedHeightScale => 32766.0f / 65535.0f;
     void Start()
     {
-        var rawData = File.ReadAllBytes("Assets/Images/UH200_map_cropped_modified.png");
+        var rawData = File.ReadAllBytes("Assets/Images/UH200_map_cropped.png");
 
         m_HeightmapGlobal = new Texture2D(2, 2);
         m_HeightmapGlobal.LoadImage(rawData);
@@ -29,7 +29,7 @@ public class generateTerrain : MonoBehaviour
     {
         // create tiles
         float TerrainWidth = (float)32;
-        float TerrainLength = (float)16;
+        float TerrainLength = (float)13.9;
         int TerrainHeight = 6;
 
         //Vector3 StartPosition = new Vector3(-TerrainWidth / 2 - (float)1.6, (float)-TerrainHeight + (float)0.1, -TerrainLength / 2 + (float)1.6);

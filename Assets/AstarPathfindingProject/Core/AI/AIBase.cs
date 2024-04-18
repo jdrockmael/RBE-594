@@ -431,14 +431,16 @@ namespace Pathfinding {
 				Quaternion nextRotation;
 				MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
 				FinalizeMovement(nextPosition, nextRotation);
-			}
-		}
+            }
+            
+        }
 
 		/// <summary>
 		/// Called every physics update.
 		/// If rigidbodies are used then all movement happens here.
 		/// </summary>
 		protected virtual void FixedUpdate () {
+			
 			if (!(rigid == null && rigid2D == null) && canMove) {
 				Vector3 nextPosition;
 				Quaternion nextRotation;
