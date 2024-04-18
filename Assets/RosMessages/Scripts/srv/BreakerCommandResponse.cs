@@ -5,42 +5,42 @@ using System.Collections.Generic;
 using System.Text;
 using Unity.Robotics.ROSTCPConnector.MessageGeneration;
 
-namespace RosMessageTypes.UnityRoboticsDemo
+namespace RosMessageTypes.Power
 {
     [Serializable]
-    public class PositionServiceResponse : Message
+    public class BreakerCommandResponse : Message
     {
-        public const string k_RosMessageName = "unity_robotics_demo_msgs/PositionService";
+        public const string k_RosMessageName = "power_msgs/BreakerCommand";
         public override string RosMessageName => k_RosMessageName;
 
-        public PosRotMsg output;
+        public BreakerStateMsg status;
 
-        public PositionServiceResponse()
+        public BreakerCommandResponse()
         {
-            this.output = new PosRotMsg();
+            this.status = new BreakerStateMsg();
         }
 
-        public PositionServiceResponse(PosRotMsg output)
+        public BreakerCommandResponse(BreakerStateMsg status)
         {
-            this.output = output;
+            this.status = status;
         }
 
-        public static PositionServiceResponse Deserialize(MessageDeserializer deserializer) => new PositionServiceResponse(deserializer);
+        public static BreakerCommandResponse Deserialize(MessageDeserializer deserializer) => new BreakerCommandResponse(deserializer);
 
-        private PositionServiceResponse(MessageDeserializer deserializer)
+        private BreakerCommandResponse(MessageDeserializer deserializer)
         {
-            this.output = PosRotMsg.Deserialize(deserializer);
+            this.status = BreakerStateMsg.Deserialize(deserializer);
         }
 
         public override void SerializeTo(MessageSerializer serializer)
         {
-            serializer.Write(this.output);
+            serializer.Write(this.status);
         }
 
         public override string ToString()
         {
-            return "PositionServiceResponse: " +
-            "\noutput: " + output.ToString();
+            return "BreakerCommandResponse: " +
+            "\nstatus: " + status.ToString();
         }
 
 #if UNITY_EDITOR
