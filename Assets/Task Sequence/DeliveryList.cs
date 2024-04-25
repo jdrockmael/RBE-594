@@ -18,12 +18,12 @@ public class DeliveryList : MonoBehaviour
     public TextAsset medList;
 
     private HashSet<string> validRooms = new HashSet<string> {
-        "E301", "E302", "E303", "E304", "E305", "E306", "E307", "E308", "E309", "E310",
-        "E311", "E312", "E313", "E314", "E401", "E402", "E403", "E404", "E405", "E406",
-        "E407", "E408", "E409", "E410", "E411", "E412", "E413", "E414", "E415", "E416",
-        "E417", "E418", "E419", "E420", "E421", "E501", "E502", "E503", "E504", "E505",
-        "E506", "E507", "E508", "E509", "E510", "E511", "E512", "E513", "E514", "E515",
-        "E516", "E517", "E701", "E702", "E703", "E704", "E705"
+        "Patient rm 1", "Patient rm 2", "Patient rm 3", "Patient rm 4","Patient rm 5",
+        "Patient rm 6","Patient rm 7","Patient rm 8","Patient rm 9","Patient rm 10",
+        "Nurse stn 11",
+        "X-ray rm 12", "Ultrasound rm 13", "Gyn Exam rm 14", "Info stn 15", "Endoscopy Exam rm 16",
+        "Supply rm 17", "Blood Test Lab 18","Sample Pickup Box",
+        "Cafe"
     };
 
     //private List<string> meds = new List<string>();

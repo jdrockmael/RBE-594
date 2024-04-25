@@ -1,10 +1,14 @@
 Item,Origin,Destination
-VitaminD3,E701, E703
-Albuterol, E701, E705
-Magnesium,E301, E310
-Amoxicillin, E714, E701
-VitaminD3,E702, E708
-Ibuprofen,E501, E505
-Omega-3,E403, E418
-Aspirin,E530, E502
-Aspirin,E405, E430
+Image,X-ray rm 12, Nurse stn 11
+Lubricant Gel, Supply rm 7, Ultrasound rm 13
+Magnesium,Nurse stn 11, Patient rm 1
+Amoxicillin, Nurse stn 11, Patient rm 5
+Blood Sample, Patient rm 10, Blood Test Lab 18
+Ibuprofen,Nurse stn 11, Patient rm 11
+Meal,Cafe, Patient rm 9
+Test Sample,Gyn Exam rm 14, Gyn Test Lab
+Aspirin,Nurse Stn 11, rm 12
+Test Sample, Gyn Exam rm 14, Sample Pickup Box
+Meal,Cafe, Patient rm 10
+Meal,patient rm 10, Cafe
+Blood Sample, Patient rm 3, Blood Test Lab 18
