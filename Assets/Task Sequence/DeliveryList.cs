@@ -15,6 +15,8 @@ public class DeliveryList : MonoBehaviour
     public GameObject prefab;
     public GameObject redPrefab;
 
+    public GameObject errorMenu;
+
     public TextAsset medList;
 
     private HashSet<string> validRooms = new HashSet<string> {
@@ -38,6 +40,8 @@ public class DeliveryList : MonoBehaviour
 
         Populate();
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -100,4 +104,5 @@ public class DeliveryList : MonoBehaviour
         scrollingObjectCollection.UpdateContent();
 
     }
+
 }
