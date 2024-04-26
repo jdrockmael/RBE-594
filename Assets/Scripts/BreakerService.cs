@@ -21,16 +21,18 @@ public class BreakerService : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ros.SendServiceMessage<BreakerCommandResponse>("base_breaker", breakerRequest);
+        
     }
 
     public void BreakerOn(){
         state = true;
         breakerRequest = new BreakerCommandRequest(state);
+        ros.SendServiceMessage<BreakerCommandResponse>("base_breaker", breakerRequest);
     }
 
     public void BreakerOff(){
         state = false;
         breakerRequest = new BreakerCommandRequest(state);
+        ros.SendServiceMessage<BreakerCommandResponse>("base_breaker", breakerRequest);
     }
 }
