@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Std;
+using System.Linq;
 
 public class targetList : MonoBehaviour
 {
     public GameObject target;
     public GameObject errorMenu;
-    public bool next;
-    public bool error;
-    public int i;
+    public bool next = false;
+    public bool error = false;
+    public int i = 0;
 
-    public List<string> rooms;
-    public List<float[]> coords;
+    public string[] rooms;
+    public float[][] coords;
 
     public string currKey;
 
@@ -36,13 +37,11 @@ public class targetList : MonoBehaviour
         error = false;
         currKey = "X-ray rm 12";
 
-        ROSConnection.GetOrCreateInstance().Subscribe<Int8Msg>("/path_status", nextTarget);;
+        ROSConnection.GetOrCreateInstance().Subscribe<Int8Msg>("/path_status", nextTarget);
         target.transform.position = new Vector3(locList[currKey][0], -1.73f, locList[currKey][1]);
 
-        foreach(KeyValuePair<string, float[]> location in locList){
-            rooms.Add(location.Key);
-            coords.Add(location.Value);
-        }
+        rooms = locList.Keys.ToArray();
+        coords = locList.Values.ToArray();
     }
 
     // Update is called once per frame
