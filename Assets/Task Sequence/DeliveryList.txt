@@ -1,14 +1,9 @@
 Item,Origin,Destination
 Image,X-ray rm 12, Nurse stn 11
-Lubricant Gel, Supply rm 7, Ultrasound rm 13
-Magnesium,Nurse stn 11, Patient rm 1
-Amoxicillin, Nurse stn 11, Patient rm 5
-Blood Sample, Patient rm 10, Blood Test Lab 18
-Ibuprofen,Nurse stn 11, Patient rm 11
-Test Sample,Gyn Exam rm 14, Gyn Test Lab
-Meal,Cafe, Patient rm 9
-Aspirin,Nurse Stn 11, rm 12
-Test Sample, Gyn Exam rm 14, Sample Pickup Box
-Meal,Cafe, Patient rm 10
-Meal,patient rm 10, Cafe
-Blood Sample, Patient rm 3, Blood Test Lab 18
+Lubricant Gel,Nurse stn 11, Supply rm 7
+Magnesium,Nurse stn 11, Ultrasound rm 13
+Amoxicillin,Ultrasound rm 13, Patient rm 1
+Blood Sample,Patient rm 1, Patient rm 5
+Ibuprofen,Patient rm 5, Blood Test Lab 18
+Test Sample,Blood Test Lab 18, Gyn Exam rm 14
+
