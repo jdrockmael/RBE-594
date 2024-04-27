@@ -4,6 +4,7 @@ Lubricant Gel,Nurse stn 11, Supply rm 7
 Magnesium,Nurse stn 11, Ultrasound rm 13
 Amoxicillin,Ultrasound rm 13, Patient rm 1
 Blood Sample,Patient rm 1, Patient rm 5
+Food,Patient rm 5, Patient rm 11
 Ibuprofen,Patient rm 5, Blood Test Lab 18
 Test Sample,Blood Test Lab 18, Gyn Exam rm 14
 

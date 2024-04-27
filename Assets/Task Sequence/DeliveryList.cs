@@ -15,9 +15,15 @@ public class DeliveryList : MonoBehaviour
     public GameObject prefab;
     public GameObject redPrefab;
 
+    public GameObject greenPrefab;
+
+    public Material greenPlate;
+
     public GameObject errorMenu;
 
     public TextAsset medList;
+
+    public int j;
 
     private HashSet<string> validRooms = new HashSet<string> {
         "Patient rm 1", "Patient rm 2", "Patient rm 3", "Patient rm 4","Patient rm 5",
@@ -35,6 +41,7 @@ public class DeliveryList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        j = 0;
         gridObjectCollection = GetComponentInChildren<GridObjectCollection>();
         scrollingObjectCollection = GetComponent<ScrollingObjectCollection>();
 
@@ -86,15 +93,15 @@ public class DeliveryList : MonoBehaviour
             }
             else
             {
-                obj = (GameObject)Instantiate(prefab, gridObjectCollection.transform);
+                obj = (GameObject)Instantiate(greenPrefab, gridObjectCollection.transform);
                 obj.GetComponentInChildren<TextMeshPro>().GetComponent<TextMeshPro>().text = item;
                 obj.SetActive(true);
 
-                obj = (GameObject)Instantiate(prefab, gridObjectCollection.transform);
+                obj = (GameObject)Instantiate(greenPrefab, gridObjectCollection.transform);
                 obj.GetComponentInChildren<TextMeshPro>().GetComponent<TextMeshPro>().text = origin;
                 obj.SetActive(true);
 
-                obj = (GameObject)Instantiate(prefab, gridObjectCollection.transform);
+                obj = (GameObject)Instantiate(greenPrefab, gridObjectCollection.transform);
                 obj.GetComponentInChildren<TextMeshPro>().GetComponent<TextMeshPro>().text = destination;
                 obj.SetActive(true);
             }
@@ -105,4 +112,38 @@ public class DeliveryList : MonoBehaviour
 
     }
 
+    public void Mark(){
+        GameObject obj; // Create GameObject instance  
+
+        // Number of medicines in list
+        //DateTime today = DateTime.Today.Date;
+
+        j+=3;
+        // Create new instances of our prefab until we've created as many as we specified
+        if(j <= 27){
+            obj = gridObjectCollection.transform.GetChild(j+1).gameObject;
+            MeshFilter quad = obj.transform.Find("BackplateLarge").transform.Find("Quad").GetComponent<MeshFilter>();
+            MeshRenderer mesh = quad.GetComponent<MeshRenderer>();
+            mesh.enabled = true;
+            obj.SetActive(true);
+
+            obj = gridObjectCollection.transform.GetChild(j+2).gameObject;
+            quad = obj.transform.Find("BackplateLarge").transform.Find("Quad").GetComponent<MeshFilter>();
+            mesh = quad.GetComponent<MeshRenderer>();
+            mesh.enabled = true;
+            obj.SetActive(true);
+
+            obj = gridObjectCollection.transform.GetChild(j+3).gameObject;
+            quad = obj.transform.Find("BackplateLarge").transform.Find("Quad").GetComponent<MeshFilter>();
+            mesh = quad.GetComponent<MeshRenderer>();
+            mesh.enabled = true;
+            obj.SetActive(true);
+
+
+
+            gridObjectCollection.UpdateCollection();
+            scrollingObjectCollection.UpdateContent(); 
+        }
+        
+    }
 }

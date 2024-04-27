@@ -12,6 +12,8 @@ public class targetList : MonoBehaviour
     private TextToSpeech textToSpeech;
     public GameObject target;
     public GameObject errorMenu;
+
+    public GameObject medList;
     public bool next = false;
     public bool error = false;
     public int i = 0;
@@ -24,6 +26,8 @@ public class targetList : MonoBehaviour
     private Int8Msg path = new Int8Msg();
 
     private ROSConnection ros;
+
+    
 
     public Dictionary<string, float[]> locList = new Dictionary<string, float[]>{
         {"X-ray rm 12", new float[] {-0.62f, 2.5f}}, //Inside between the tables where we work and the center board
@@ -74,6 +78,7 @@ public class targetList : MonoBehaviour
             if(!error){
                 path.data = 1;
                 ros.Publish("/path_status", path);
+                medList.GetComponent<DeliveryList>().Mark();
                 target.transform.position = new Vector3(locList[currKey][0], -1.73f, locList[currKey][1]);
             }
         }
@@ -93,6 +98,7 @@ public class targetList : MonoBehaviour
     public void clearError(){
         path.data = 1;
         ros.Publish("/path_status", path);
+        medList.GetComponent<DeliveryList>().Mark();
         error = false;
     }
 }
