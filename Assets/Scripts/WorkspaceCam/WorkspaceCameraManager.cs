@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Std;
 
+//This is not used.
 public class WorkspaceCameraManager : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;

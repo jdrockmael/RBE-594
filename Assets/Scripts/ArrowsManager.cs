@@ -7,6 +7,7 @@ using RosMessageTypes.Geometry;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Audio;
 
+//This script is originally from Lorena's repo. We repurposed it for manual control of the robot when we push the buttons in Unity, so most of it is modified.
 public class ArrowsManager : MonoBehaviour
 {
     private TwistMsg buttonPressed = new TwistMsg();
@@ -22,17 +23,19 @@ public class ArrowsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // start the ROS connection
+        // start the ROS connection to the real robot
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<TwistMsg>("/cmd_vel");
         textToSpeech = gameObject.GetComponent<TextToSpeech>();
     }
-
+    
+    //Update every step in unity, which is about 60Hz
     void Update()
     {
         ros.Publish("/cmd_vel", buttonPressed);
     }
 
+    //We dont use this function, it is for when there was multiple control options for the chest and arm as well
     public void AppearArrowsBaseControl(){
 
         if (toggleSwitchBase.IsToggled){
@@ -53,33 +56,35 @@ public class ArrowsManager : MonoBehaviour
         }
     }
 
+    //Functions that we wrote to tell each arrow what to do
     public void upPressed()
     {
-        // Send 1 if up button is pressed
+        //Move the robot at 50cm per second forward
         buttonPressed.linear.x = 0.5;
     }
 
     public void Released()
     {
+        //When no button is being pressed, constantly tell the robot not to move
         buttonPressed.linear.x = 0.0;
         buttonPressed.angular.z = 0.0;
     }
 
     public void downPressed()
     {
-        // Send 2 if down button is pressed
+        //Move the robot at 50cm per second backward
         buttonPressed.linear.x = -0.5;
     }
 
     public void rightPressed()
     {
-        // Send 3 if right button is pressed
+        //Move the robot at 1 radian per second clockwise
         buttonPressed.angular.z = -1.0;
     }
 
     public void leftPressed()
     {
-        // Send 4 if left button is pressed
+        //Move the robot at 1 radian per second counter-clockwise
         buttonPressed.angular.z = 1.0;
     }
 }

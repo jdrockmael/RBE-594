@@ -13,6 +13,9 @@ using UnityEngine;
 ///     the better practice is still to set its target position.
 ///     So, all joints are still initialized for the purpose of position control.
 /// </remarks>
+/// 
+
+//This is for the robot arm, so it is not used by us.
 public class ArticulationBodyInitialization : MonoBehaviour
 {
     [SerializeField] private GameObject robotRoot;

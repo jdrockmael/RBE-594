@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is used for the minimap. This was written by us.
 public class CoordinateSystemDisplay : MonoBehaviour
 {
     private void OnDrawGizmos()

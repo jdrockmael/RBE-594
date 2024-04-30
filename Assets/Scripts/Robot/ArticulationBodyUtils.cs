@@ -6,6 +6,9 @@ using UnityEngine;
 ///    This Utils class contains some useful functions for ArticulationBody
 ///    All angles are in degree
 /// </summary>
+/// 
+
+//This is for the robot arm, so it is not used by us.
 public static class ArticulationBodyUtils
 {
     // Set joint target (in degree)

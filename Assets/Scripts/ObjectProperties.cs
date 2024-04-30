@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is default Unity functionality for making gameobjects, or components that appear in the world. We did not modify this code.
 public class ObjectProperties : MonoBehaviour
 {
     [SerializeField] private GameObject referenceObject, spatialAnchor;

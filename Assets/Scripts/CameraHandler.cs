@@ -7,6 +7,7 @@ using RosMessageTypes.Geometry;
 using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using System.Collections.Specialized;
 
+//This is default Unity functionality for the player camera. We did not modify this code.
 public class CameraHandler : MonoBehaviour
 {       
     [SerializeField] private ROSPublisher publisher;

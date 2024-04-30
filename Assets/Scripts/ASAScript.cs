@@ -12,6 +12,7 @@ using RosMessageTypes.Std;
 using RosMessageTypes.Geometry;
 
 [RequireComponent(typeof(SpatialAnchorManager))]
+//These are default scripts from Unity that allow you to locate the spatial anchor, create new ones, and set the ID. We did not modify this code.
 public class ASAScript : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;

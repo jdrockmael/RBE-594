@@ -7,6 +7,7 @@ using RosMessageTypes.Geometry;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Audio;
 
+//Since we no longer have a chest on the robot, this code is unused.
 public class ChestPosition : MonoBehaviour
 {
     public ROSPublisher publisher;

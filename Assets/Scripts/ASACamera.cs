@@ -12,6 +12,8 @@ using RosMessageTypes.Std;
 using RosMessageTypes.Geometry;
 
 [RequireComponent(typeof(SpatialAnchorManager))]
+
+//This code is from Lorena's repo, it is used for locating the spatial anchor with the Intel RealSense camera. We did not modify this code.
 public class ASACamera : MonoBehaviour
 {
     [SerializeField] private GameObject CameraObject;

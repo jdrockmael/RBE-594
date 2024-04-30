@@ -16,6 +16,9 @@ using Unity.Robotics.ROSTCPConnector;
 ///     SetJointSpeedStep (move at the target velocity in one delta time)
 ///     SetJointTrajectory (use coroutine to move along a trajectory).
 /// </summary>
+/// 
+
+//This is for the robot arm, so it is not used by us.
 public class ArticulationJointController : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;

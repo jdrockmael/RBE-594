@@ -5,6 +5,7 @@ using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Std;
 using Microsoft.MixedReality.Toolkit.UI;
 
+//This is default Unity functionality for making and pressing buttons. We did not modify this code.
 public class ButtonsManager : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;

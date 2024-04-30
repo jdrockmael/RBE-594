@@ -5,6 +5,7 @@ using Microsoft.MixedReality.Toolkit.UI;
 using RosMessageTypes.Std;
 using RosMessageTypes.Geometry;
 
+//This is a separate method of emergency stop that is not as limiting as the other. This was all written by us.
 public class VelocityPublisher : MonoBehaviour
 {
     private TwistMsg twistMsg = new TwistMsg();
@@ -12,29 +13,16 @@ public class VelocityPublisher : MonoBehaviour
     private bool emergencyStop = false; // Flag for the emergency stop state
 
     // ROS publisher for Twist messages
-    //private Publisher<TwistMsg> twistPub;
-
     void Start()
     {
         // Initialize the ROS connection and the publisher
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<TwistMsg>("/cmd_vel");
-        //twistPub = rosConnection.Advertise<TwistMsg>("/cmd_vel");
     }
 
     void Update()
     {
-        /*if (!emergencyStop)
-        {
-            // Regular operation: update and publish velocities
-            UpdateAndPublishVelocities();
-        }
-        else
-        {
-            // Emergency stop is active: publish zero velocities to halt the robot
-            PublishZeroVelocities();
-        }
-        */
+
         if(emergencyStop)
         {
             PublishZeroVelocities();
@@ -45,6 +33,7 @@ public class VelocityPublisher : MonoBehaviour
     // General method to publish Twist messages with given linear and angular velocities
     private void PublishZeroVelocities()
     {
+        //Tell the robot to go to a linear and angular speed of zero rather than the mechanical lock.
         twistMsg.linear.x = 0.0;
         twistMsg.angular.z = 0.0;
     }

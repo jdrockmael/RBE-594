@@ -13,6 +13,7 @@ using System.Security.Authentication.ExtendedProtection;
 using System.Collections.Specialized;
 using System.Linq.Expressions;
 
+//Simple debugger that makes sure ROS connections work. We did not modify this code.
 public class SendInfo : MonoBehaviour
 {   [SerializeField] private ROSPublisher publisher;
     [SerializeField] private GameObject spatialAnchor;

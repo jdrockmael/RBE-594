@@ -5,6 +5,7 @@ using Microsoft.MixedReality.Toolkit.UI;
 using RosMessageTypes.Std;
 using RosMessageTypes.Geometry;
 
+//Default ROS publisher from the ROS-TCP-Connector plugin. We did not modify this code.
 public class ROSPublisher : MonoBehaviour
 {
 

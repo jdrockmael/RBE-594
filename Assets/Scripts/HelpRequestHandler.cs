@@ -13,6 +13,7 @@ using System.Security.Authentication.ExtendedProtection;
 using System.Collections.Specialized;
 using System.Linq.Expressions;
 
+//This is from Lorena's repo. We did not modify this code, but used it as a template to create our help requests from the robot to the user.
 public class HelpRequestHandler : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;

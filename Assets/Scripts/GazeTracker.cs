@@ -5,6 +5,7 @@ using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
 
+//This is default Unity functionality for gaze tracking. We did not modify this code.
 public class GazeTracker : MonoBehaviour
 {
     private Vector3 gazeOrigin, gazeDirection;

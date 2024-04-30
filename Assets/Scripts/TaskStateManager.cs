@@ -9,6 +9,7 @@ using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.MixedReality.Toolkit.Audio;
 
+//This code is from Lorena's repo and is not used by us because it has chest and arm control. We did not modify this code.
 public class TaskStateManager : MonoBehaviour
 {
     [SerializeField] private ROSPublisher publisher;
