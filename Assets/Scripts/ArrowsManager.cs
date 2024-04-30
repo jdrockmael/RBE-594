@@ -9,24 +9,28 @@ using Microsoft.MixedReality.Toolkit.Audio;
 
 public class ArrowsManager : MonoBehaviour
 {
-    private int buttonPressed = 0;
+    private TwistMsg buttonPressed = new TwistMsg();
     public ROSPublisher publisher;
     ROSConnection ros;
     [SerializeField] private Interactable toggleSwitchBase;
     private TextToSpeech textToSpeech;
+
+    private float timeElapsed = 0.0f;
+
+    public float publishMessageFrequency = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         // start the ROS connection
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<Int32Msg>("button_pressed");
+        ros.RegisterPublisher<TwistMsg>("/cmd_vel");
         textToSpeech = gameObject.GetComponent<TextToSpeech>();
     }
 
     void Update()
     {
-        publisher.Int32Message("button_pressed", buttonPressed);
+        ros.Publish("/cmd_vel", buttonPressed);
     }
 
     public void AppearArrowsBaseControl(){
@@ -52,29 +56,30 @@ public class ArrowsManager : MonoBehaviour
     public void upPressed()
     {
         // Send 1 if up button is pressed
-        buttonPressed = 1;
+        buttonPressed.linear.x = 0.5;
     }
 
     public void Released()
     {
-        buttonPressed = 0;
+        buttonPressed.linear.x = 0.0;
+        buttonPressed.angular.z = 0.0;
     }
 
     public void downPressed()
     {
         // Send 2 if down button is pressed
-        buttonPressed = 2;
+        buttonPressed.linear.x = -0.5;
     }
 
     public void rightPressed()
     {
         // Send 3 if right button is pressed
-        buttonPressed = 3;
+        buttonPressed.angular.z = -1.0;
     }
 
     public void leftPressed()
     {
         // Send 4 if left button is pressed
-        buttonPressed = 4;
+        buttonPressed.angular.z = 1.0;
     }
 }
