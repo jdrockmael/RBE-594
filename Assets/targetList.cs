@@ -87,6 +87,7 @@ public class targetList : MonoBehaviour
     public void nextTarget(Int8Msg done){
         if(done.data == 3){
             next = true;
+            //medList.GetComponent<DeliveryList>().Mark();
         }
         if(done.data == -2){
             error = true;
